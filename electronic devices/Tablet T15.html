@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tablet T15 - Details</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="devicepage">
+    <h2>Tablet T15</h2>
+
+    <div class="gallery-container">
+      <img id="mainImage" class="bigImage"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkn4eHqrmlVZaw4rlEZkQi656rGb-eN93F4HjuwP7pg&s" />
+
+      <div class="thumbnails-container">
+        <img class="smallImage"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkn4eHqrmlVZaw4rlEZkQi656rGb-eN93F4HjuwP7pg&s"
+          onclick="showPicture1()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500"
+          onclick="showPicture2()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?w=500"
+          onclick="showPicture3()" />
+      </div>
+
+    </div>
+
+    <p><strong>Price:</strong> $399.99</p>
+    <p><strong>Description:</strong> Versatile 10.5-inch tablet ideal for reading, streaming, stylus drawing, and
+      portable daily productivity.</p>
+    <button onclick="addtocart()">Add to cart</button>
+    <p id="message"></p>
+  </div>
+</body>
+
+</html>

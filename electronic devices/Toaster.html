@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toaster - Details</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="devicepage">
+    <h2>Toaster</h2>
+
+    <div class="gallery-container">
+      <img id="mainImage" class="bigImage"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff/lossless-page1-250px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" />
+
+      <div class="thumbnails-container">
+        <img class="smallImage"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff/lossless-page1-250px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+          onclick="showPicture1()" />
+        <img class="smallImage"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH7bMvxk2pS8sP7D2t_3tV0zY45Y1c29eU0Q&s"
+          onclick="showPicture2()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=500"
+          onclick="showPicture3()" />
+      </div>
+
+    </div>
+
+    <p><strong>Price:</strong> $99.99</p>
+    <p><strong>Description:</strong> Digital 2-slice toaster with extra-wide slots, multiple browning controls, bagel
+      mode, and removable crumb tray.</p>
+    <button onclick="addtocart()">Add to cart</button>
+    <p id="message"></p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouse and Keyboard - Details</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="devicepage">
+    <h2>Mouse and Keyboard</h2>
+
+    <div class="gallery-container">
+      <img id="mainImage" class="bigImage"
+        src="https://d3m9l0v76dty0.cloudfront.net/system/photos/29287835/large/8de7ebc955a5a48eb8911e894b1f3709.jpg" />
+
+      <div class="thumbnails-container">
+        <img class="smallImage"
+          src="https://d3m9l0v76dty0.cloudfront.net/system/photos/29287835/large/8de7ebc955a5a48eb8911e894b1f3709.jpg"
+          onclick="showPicture1()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500"
+          onclick="showPicture2()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500"
+          onclick="showPicture3()" />
+      </div>
+    </div>
+
+    <p><strong>Price:</strong> $199.99</p>
+    <p><strong>Description:</strong> Ergonomic wireless mouse and mechanical keyboard combo with customizable RGB
+      backlighting and long battery life.</p>
+    <button onclick="addtocart()">Add to cart</button>
+    <p id="message"></p>
+  </div>
+</body>
+
+</html>

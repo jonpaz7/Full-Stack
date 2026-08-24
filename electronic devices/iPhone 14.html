@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iPhone 14 - Details</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="devicepage">
+    <h2>iPhone 14</h2>
+
+    <div class="gallery-container">
+      <img id="mainImage" class="bigImage"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v0Hww_FA6OZ0K2Lbk-dnXOpaSZg8hgl4bmfL5Eg8Bw&s=10" />
+
+      <div class="thumbnails-container">
+        <img class="smallImage"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v0Hww_FA6OZ0K2Lbk-dnXOpaSZg8hgl4bmfL5Eg8Bw&s=10"
+          onclick="showPicture1()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500"
+          onclick="showPicture2()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?w=500"
+          onclick="showPicture3()" />
+      </div>
+
+    </div>
+
+    <p><strong>Price:</strong> $499.99</p>
+    <p><strong>Description:</strong> Flagship smartphone featuring Super Retina XDR display, dual-camera system with
+      Night mode, Crash Detection, and fast Superfast 5G cellular.</p>
+
+    <button onclick="addtocart()">Add to cart</button>
+    <p id="message"></p>
+  </div>
+</body>
+
+</html>

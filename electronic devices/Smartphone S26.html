@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartphone S26 - Details</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div id="item-page" class="devicepage">
+    <h2>Smartphone S26</h2>
+
+    <div class="gallery-container">
+      <img id="mainImage" class="bigImage"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10" />
+
+      <div class="thumbnails-container">
+        <img class="smallImage"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
+          onclick="showPicture1()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+          onclick="showPicture2()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+          onclick="showPicture3()" />
+      </div>
+
+
+    </div>
+
+    <p><strong>Price:</strong> $699.99</p>
+    <p><strong>Description:</strong> High-performance smartphone with advanced camera system, 6.7-inch AMOLED display,
+      fast charging, and all-day battery life.</p>
+    <button onclick="addtocart()">Add to cart</button>
+    <p id="message"></p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV - Details</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="devicepage">
+    <h2>TV</h2>
+
+    <div class="gallery-container">
+      <img id="mainImage" class="bigImage"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RCA_630-TS_Television.jpg/250px-RCA_630-TS_Television.jpg?utm_source=he.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" />
+
+      <div class="thumbnails-container">
+        <img class="smallImage"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RCA_630-TS_Television.jpg/250px-RCA_630-TS_Television.jpg?utm_source=he.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+          onclick="showPicture1()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500"
+          onclick="showPicture2()" />
+        <img class="smallImage" src="https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500"
+          onclick="showPicture3()" />
+      </div>
+
+    </div>
+
+    <p><strong>Price:</strong> $1599.99</p>
+    <p><strong>Description:</strong> Ultra HD 4K Smart Television with vibrant HDR picture quality, Dolby Atmos sound,
+      and integrated smart streaming platforms.</p>
+    <button onclick="addtocart()">Add to cart</button>
+    <p id="message"></p>
+  </div>
+</body>
+
+</html>
