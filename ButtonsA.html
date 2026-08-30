@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .exdiv {
+        width: fit-content;
+        padding: 20px;
+        margin: 20px auto;
+        align-items: center;
+        text-align: center;
+        font-size: 300%;
+        background-color: bisque;
+        border-radius: 10px;
+        display: inline-block;
+        border: 1px;
+        border-color: brown;
+        border-style: solid;
+      }
+
+      button {
+        text-decoration: none;
+        background-color: brown;
+        color: white;
+        padding: 7px 12px;
+        border-radius: 5px;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      //====================================================== Part 1: Counter
+
+      let count = 0;
+
+      function addone() {
+        count = count + 1;
+        document.getElementById("info").textContent = count;
+      }
+
+      function addfive() {
+        count = count + 5;
+        document.getElementById("info").textContent = count;
+      }
+
+      function substructone() {
+        count = count - 1;
+        document.getElementById("info").textContent = count;
+      }
+      function reset() {
+        count = 0;
+        document.getElementById("info").textContent = count;
+      }
+
+      //====================================================== Part 2: Sum
+
+      let sum = 0;
+
+      function addten() {
+        sum += 10;
+        document.getElementById("suminfo").textContent = sum;
+      }
+
+      function addtwenty() {
+        sum += 20;
+        document.getElementById("suminfo").textContent = sum;
+      }
+
+      function addfifty() {
+        sum += 50;
+        document.getElementById("suminfo").textContent = sum;
+      }
+      function resetsum() {
+        sum = 0;
+        document.getElementById("suminfo").textContent = sum;
+      }
+
+      //====================================================== Part 3: String Concatenate
+
+      let text = "";
+
+      function addapple() {
+        text += "Apple ";
+        document.getElementById("textinfo").textContent = text;
+      }
+
+      function addbanana() {
+        text += "Banana ";
+        document.getElementById("textinfo").textContent = text;
+      }
+
+      function addorange() {
+        text += "Orange ";
+        document.getElementById("textinfo").textContent = text;
+      }
+
+      function cleartext() {
+        text = "";
+        document.getElementById("textinfo").innerHTML = "<br>";
+      }
+
+      //====================================================== Part 3: String Concatenate
+
+      let quantity = 0;
+
+      function plus() {
+        quantity++;
+        document.getElementById("quantity").textContent = quantity;
+      }
+      function minus() {
+        quantity--;
+        document.getElementById("quantity").textContent = quantity;
+      }
+      function resetquantity() {
+        quantity = 0;
+        document.getElementById("quantity").textContent = quantity;
+      }
+    </script>
+
+    <div>
+      <div class="exdiv">
+        <h5>Counter</h5>
+        <p id="info">0</p>
+        <button onclick="addone()">Add 1</button>
+        <button onclick="addfive()">Add 5</button>
+        <button onclick="substructone()">substructone</button>
+        <button onclick="reset()">Reset</button>
+      </div>
+      <div class="exdiv">
+        <h5>Sum</h5>
+        <p id="suminfo">0</p>
+        <button onclick="addten()">Add 10</button>
+        <button onclick="addtwenty()">add 20</button>
+        <button onclick="addfifty()">add fifty</button>
+        <button onclick="resetsum()">Reset Sum</button>
+      </div>
+      <div class="exdiv">
+        <h5>Quantity</h5>
+        <p id="quantity">0</p>
+        <button onclick="plus()">Plus</button>
+        <button onclick="minus()">Minus</button>
+        <button onclick="resetquantity()">Reset</button>
+      </div>
+      <div class="exdiv">
+        <h5>String Concatenate</h5>
+        <p id="textinfo"><br /></p>
+        <button onclick="addapple()">Add apple</button>
+        <button onclick="addbanana()">add banana</button>
+        <button onclick="addorange()">add orange</button>
+        <button onclick="cleartext()">clear</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,76 +1,119 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Electronic Devices</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Electronic Devices</title>
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="main.css">
-</head>
+  <body>
+    <div id="navbar"></div>
 
-<body>
-  <div id="navbar"></div>
+    <div class="title">
+      <h1>My Electronic Devices</h1>
+    </div>
+    <div class="items-container">
+      <div class="devicecard">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
+        />
+        <div class="item-details">
+          <h3>Smartphone S26</h3>
+          <p>Price: $699.99</p>
 
-  <div class="title">
-    <h1>My Electronic Devices</h1>
-  </div>
-  <div id="items-container">
+          <div class="countButtons">
+            <a href="Smartphone S26.html"><button>more info</button></a>
+            <button onclick="addProduct(0)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="devicecard">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkn4eHqrmlVZaw4rlEZkQi656rGb-eN93F4HjuwP7pg&s"
+        />
+        <div class="item-details">
+          <h3>Tablet T15</h3>
+          <p>Price: $399.99</p>
+          <div class="countButtons">
+            <a href="Tablet T15.html"><button>more info</button></a>
+            <button onclick="addProduct(1)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="devicecard">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v0Hww_FA6OZ0K2Lbk-dnXOpaSZg8hgl4bmfL5Eg8Bw&s=10"
+        />
+        <div class="item-details">
+          <h3>iPhone 14</h3>
+          <p>Price: $499.99</p>
+          <div class="countButtons">
+            <a href="iPhone 14.html"><button>more info</button></a>
+            <button onclick="addProduct(2)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="devicecard">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff/lossless-page1-250px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        />
+        <div class="item-details">
+          <h3>Toaster</h3>
+          <p>Price: $99.99</p>
+          <div class="countButtons">
+            <a href="Toaster.html"><button>more info</button></a>
+            <button onclick="addProduct(3)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="devicecard">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RCA_630-TS_Television.jpg/250px-RCA_630-TS_Television.jpg?utm_source=he.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        />
+        <div class="item-details">
+          <h3>TV</h3>
+          <p>Price: $1599.99</p>
+          <div class="countButtons">
+            <a href="TV.html"><button>more info</button></a>
+            <button onclick="addProduct(4)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="devicecard">
+        <img
+          src="https://d3m9l0v76dty0.cloudfront.net/system/photos/29287835/large/8de7ebc955a5a48eb8911e894b1f3709.jpg"
+        />
+        <div class="item-details">
+          <h3>Mouse and Keyboard</h3>
+          <p>Price: $199.99</p>
+          <div class="countButtons">
+            <a href="Mouse and Keyboard.html"><button>more info</button></a>
+            <button onclick="addProduct(5)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="devicecard">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10" />
-      <div class="item-details">
-        <h3>Smartphone S26</h3>
-        <p>Price: $699.99</p>
-        <a href="Smartphone S26.html"><button>more info</button></a>
+    <div id="divs-container">
+      <div
+        class="items-container"
+        style="width: fit-content; height: fit-content"
+      >
+        <p id="cartCounter">Number of products in cart: 0</p>
+        <p id="sum">Sum: 0$</p>
+        <p id="priceReaction"></p>
+        <button onclick="resetCartCounter()">Reset</button>
+      </div>
+      <div
+        class="items-container"
+        style="width: fit-content; flex-direction: column; gap: 0"
+      >
+        <h3>Products in Cart:</h3>
+        <p id="productsList"></p>
+        <button onclick="resetProductsCart()">Reset Cart</button>
       </div>
     </div>
-    <div class="devicecard">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkn4eHqrmlVZaw4rlEZkQi656rGb-eN93F4HjuwP7pg&s" />
-      <div class="item-details">
-        <h3>Tablet T15</h3>
-        <p>Price: $399.99</p>
-        <a href="Tablet T15.html"><button>more info</button></a>
-      </div>
-    </div>
-    <div class="devicecard">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v0Hww_FA6OZ0K2Lbk-dnXOpaSZg8hgl4bmfL5Eg8Bw&s=10" />
-      <div class="item-details">
-        <h3>iPhone 14</h3>
-        <p>Price: $499.99</p>
-        <a href="iPhone 14.html"><button>more info</button></a>
-      </div>
-    </div>
-    <div class="devicecard">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff/lossless-page1-250px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" />
-      <div class="item-details">
-        <h3>Toaster</h3>
-        <p>Price: $99.99</p>
-        <a href="Toaster.html"><button>more info</button></a>
-      </div>
-    </div>
-    <div class="devicecard">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RCA_630-TS_Television.jpg/250px-RCA_630-TS_Television.jpg?utm_source=he.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" />
-      <div class="item-details">
-        <h3>TV</h3>
-        <p>Price: $1599.99</p>
-        <a href="TV.html"><button>more info</button></a>
-      </div>
-    </div>
-    <div class="devicecard">
-      <img
-        src="https://d3m9l0v76dty0.cloudfront.net/system/photos/29287835/large/8de7ebc955a5a48eb8911e894b1f3709.jpg" />
-      <div class="item-details">
-        <h3>Mouse and Keyboard</h3>
-        <p>Price: $199.99</p>
-        <a href="Mouse and Keyboard.html"><button>more info</button></a>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
