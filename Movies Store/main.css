@@ -1,0 +1,202 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #0f172a;
+}
+
+/* צובע את הטקסט של התיבה באפור כל עוד הערך 0 נבחר */
+#movs:has(option[value="0"]:checked) {
+  color: #757575 !important;
+}
+
+/* מחזיר את הצבע הכהה הרגיל לשאר האופציות ברשימה שנפתחת */
+#movs option {
+  color: #1e293b;
+}
+
+/* יצירת שכבת הרקע בעיצוב קולנועי מודרני */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url(./images/quentin_tarantino_the_hateful_eight.jpg);
+  background-size: cover;
+  height: 100%;
+  /*background:
+    radial-gradient(circle at 20% 20%, rgba(229, 9, 20, 0.15), transparent 40%),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(59, 130, 246, 0.15),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #0b0f19 0%, #1a2236 50%, #0f172a 100%);
+  background-size: cover;
+  background-position: center;*/
+  z-index: -1;
+}
+
+/* הקונטיינר הראשי - כרטיס מודרני וממורכז */
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+}
+
+/* עיצוב הכותרת הראשית */
+h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #1e293b;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* סידור תיבות הקלט אחת מתחת לשנייה עם מרווח */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* עיצוב תיבות הקלט וה-Select */
+input,
+#movs,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #1e293b60;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #1e293b;
+  background-color: #f8fafc;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#movs,
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7"><path d="M1 1l5 5 5-5" stroke="%23e50914" stroke-width="2" fill="none" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 7px;
+  cursor: pointer;
+  padding-right: 36px;
+}
+
+input:focus,
+#movs:focus,
+select:focus {
+  border-color: #1e293b;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(#1e293b15);
+}
+
+/* סידור הכפתורים זה לצד זה */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+button {
+  flex: 1;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* כפתור Show - אדום קולנועי מרשים */
+.btn-show {
+  background: linear-gradient(135deg, #e50914 0%, #b80710 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.25);
+}
+
+.btn-show:hover {
+  background: linear-gradient(135deg, #f40612 0%, #c40812 100%);
+  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.35);
+  transform: translateY(-1px);
+}
+
+/* כפתור Clear - אפור ניטרלי מודרני */
+.btn-clear {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-clear:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+/* אזור הצגת הנתונים */
+.info-section {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+/* עיצוב הפסקאות הבודדות בפלט */
+.info-section p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #334155;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.info-section p:empty {
+  display: none;
+}
+
+.info-section p:last-of-type {
+  border-bottom: none;
+}
+
+/* עיצוב קופסת ה-Summary בסגנון כרטיס קולנוע */
+#summary-info {
+  margin-top: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-left: 4px solid #e50914;
+  border-radius: 10px;
+  white-space: pre-line;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  line-height: 1.6;
+  border-bottom: none !important;
+}

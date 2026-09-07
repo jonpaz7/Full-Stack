@@ -1,0 +1,188 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  position: relative; /* נחוץ בשביל מיקום הרקע המטושטש */
+  overflow: hidden; /* מונע פסי גלילה מיותרים בגלל הטשטוש */
+}
+
+/* יצירת שכבת הרקע המטושטשת */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/vegetablesBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px); /* ככל שהמספר גבוה יותר, הטשטוש חזק יותר */
+  z-index: -1; /* דוחף את הרקע אל מאחורי כרטיס התוכן */
+  transform: scale(1.05); /* מונע קצוות לבנים סביב המסך בגלל הטשטוש */
+}
+
+/* הקונטיינר הראשי - יוצר אפקט של כרטיס צף וממורכז */
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+}
+
+/* עיצוב הכותרת הראשית */
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* סידור תיבות הקלט אחת מתחת לשנייה עם מרווח */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* עיצוב תיבות הקלט (Inputs) */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* אפקט זמינה (Focus) כשלוחצים על התיבה */
+#vegs {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: white;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><polygon points="0,0 10,0 5,5" fill="%234a90e2"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#vegs:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+/* סידור הכפתורים זה לצד זה */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* כפתור Show - צבע כחול מודרני */
+.btn-show {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.btn-show:hover {
+  background-color: #357abd;
+}
+
+/* כפתור Clear - צבע אפור ניטרלי */
+.btn-clear {
+  background-color: #e0e0e0;
+  color: #4a4a4a;
+}
+
+.btn-clear:hover {
+  background-color: #d5d5d5;
+}
+
+/* אזור הצגת הנתונים - סידור הטקסטים בתוך כרטיס מעוצב */
+.info-section {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+/* עיצוב הפסקאות הבודדות בפלט */
+.info-section p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #4a5568;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #edf2f7;
+}
+
+.info-section p:last-of-type {
+  border-bottom: none;
+}
+
+/* עיצוב בולט וממורכז ל-Special Order */
+#specialOrder {
+  color: #e74c3c;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 15px;
+  border: none !important; /* מבטל את הקו המקווקו לפסקה הזו */
+}
+
+/* עיצוב קופסת ה-Summary בסגנון חשבונית מודרנית */
+#summary-info {
+  margin-top: 20px;
+  padding: 18px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  border-left: 5px solid #2ecc71;
+  border-radius: 8px;
+  white-space: pre-line;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
+  border-bottom: none !important; /* מבטל קו תחתון אם קיים */
+}

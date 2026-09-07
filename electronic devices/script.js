@@ -5,9 +5,14 @@ fetch("navbar.html")
     if (navbarContainer) {
       navbarContainer.innerHTML = data;
     }
+
+    insertDate();
   })
   .catch((error) => console.error("Error loading navbar:", error));
 
+function insertDate() {
+  document.getElementById("date").innerText = Temporal.Now.plainDateISO();
+}
 function addtocart() {
   document.getElementById("message").textContent = "Added to cart";
 }
@@ -45,6 +50,10 @@ const PRODUCTS = [
   { id: 5, name: "Mouse and Keyboard", price: 199.99 },
 ];
 
+let cartCounter = 0;
+let sum = 0;
+let productsList = "";
+
 function addProduct(productID) {
   const p = PRODUCTS.find((x) => x.id === productID);
 
@@ -60,10 +69,10 @@ function addProduct(productID) {
   document.getElementById("sum").textContent = `Sum: ${sum.toFixed(2)}$`;
 
   //Updating reaction
-  if (sum > 300) {
+  if (sum > 1000) {
+    reaction = "Very  Expensive";
+  } else if (sum > 300) {
     reaction = "Expensive";
-  } else if (sum > 1000) {
-    reaction = "Very Expensive";
   } else {
     reaction = "Cheap";
   }
@@ -73,15 +82,20 @@ function addProduct(productID) {
   //Updating products list
   productsList += `${p.name} <br>`;
   document.getElementById("productsList").innerHTML = productsList;
+
+  //Alert on product add
+  window.alert(`Product ${p.name} added to cart.`);
 }
 
 function resetCartCounter() {
-  cartCounter = 0;
-  sum = 0;
-  document.getElementById("cartCounter").textContent =
-    "Number of products in cart: " + cartCounter;
-  document.getElementById("sum").textContent = "Sum: " + sum + "$";
-  document.getElementById("priceReaction").textContent = "";
+  if (window.confirm("Reaset all?")) {
+    cartCounter = 0;
+    sum = 0;
+    document.getElementById("cartCounter").textContent =
+      "Number of products in cart: " + cartCounter;
+    document.getElementById("sum").textContent = "Sum: " + sum + "$";
+    document.getElementById("priceReaction").textContent = "";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

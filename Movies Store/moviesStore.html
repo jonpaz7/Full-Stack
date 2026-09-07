@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies Store</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Movies Store</h2>
+
+      <div class="input-group">
+        <select id="movs">
+          <option value="0" disabled selected hidden>Choose a movie</option>
+          <option value="1">The Hateful Eight ------- 300₪</option>
+          <option value="2">Avatar ------------------ 50₪</option>
+          <option value="3">Batman ------------------ 40₪</option>
+          <option value="4">Titanic ----------------- 60₪</option>
+        </select>
+
+        <input
+          id="tickets"
+          type="number"
+          placeholder="Please enter ticket number"
+        />
+
+        <input id="age" type="number" placeholder="Please enter your age" />
+
+        <div class="button-group">
+          <button
+            onclick="show(document.getElementById('movs').value)"
+            class="btn-show"
+          >
+            Show
+          </button>
+          <button onclick="clearAll()" class="btn-clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <p id="movieInfo"></p>
+        <p id="priceInfo"></p>
+        <p id="quantityInfo"></p>
+        <p id="ageInfo"></p>
+        <p id="summary-info"></p>
+      </div>
+    </div>
+  </body>
+</html>

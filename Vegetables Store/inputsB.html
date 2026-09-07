@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegetable Order System</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Vegetable Order</h2>
+
+      <div class="input-group">
+        <!-- <input
+          id="vegetable"
+          type="text"
+          placeholder="Please enter a vegetable"
+        />
+        <input id="price" type="number" placeholder="Please enter a price" />-->
+
+        <select id="vegs">
+          <option value="1">Carrot ---- 3₪</option>
+          <option value="2">Broccoli -- 5₪</option>
+          <option value="3">Potato ---- 7₪</option>
+        </select>
+
+        <input
+          id="quantity"
+          type="number"
+          placeholder="Please enter quantity"
+        />
+        <div class="button-group">
+          <button
+            onclick="show(document.getElementById('vegs').value)"
+            class="btn-show"
+          >
+            Show
+          </button>
+          <button onclick="clearAll()" class="btn-clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <p id="vegetableInfo"></p>
+        <p id="priceInfo"></p>
+        <p id="quantityInfo"></p>
+        <p id="specialOrder"></p>
+        <p id="summary-info"></p>
+      </div>
+    </div>
+  </body>
+</html>
