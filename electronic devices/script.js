@@ -69,9 +69,9 @@ function addProduct(productID) {
   document.getElementById("sum").textContent = `Sum: ${sum.toFixed(2)}$`;
 
   //Updating reaction
-  if (sum > 1000) {
+  if (sum > 3000) {
     reaction = "Very  Expensive";
-  } else if (sum > 300) {
+  } else if (sum > 1000) {
     reaction = "Expensive";
   } else {
     reaction = "Cheap";
