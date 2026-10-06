@@ -74,6 +74,25 @@ nav p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+.delBTNS {
+  cursor: pointer;
+  background-color: #f32121;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  margin: 6px;
+  font-weight: 600;
+  width: auto;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  display: inline;
+}
+
 .devicecard {
   background-color: #fff;
   border-radius: 12px;

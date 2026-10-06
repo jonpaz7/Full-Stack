@@ -1,0 +1,42 @@
+<button onclick="addFruit(0)">Apple</button>
+<button onclick="addFruit(1)">Banana</button>
+<button onclick="addFruit(2)">Orange</button>
+<p id="fruitList"></p>
+<script>
+  // ==================== Variables ====================
+  // Store the available fruits
+  let fruits = ["Apple", "Banana", "Orange"];
+  // Store the fruits added to the cart
+  let cart = [];
+  // ==================== Functions ====================
+  function addFruit(index) {
+    // Add the selected fruit to the cart
+    cart.push(fruits[index]);
+    // Display the updated cart
+    renderList();
+  }
+  function renderList() {
+    // Create the HTML that will display the cart
+    let text = "";
+    // Add each fruit and its delete button to the HTML
+    for (let i = 0; i < cart.length; i++) {
+      // Display the fruit index, name and delete button
+      // Send the fruit index to the delete function
+      text +=
+        i +
+        ": " +
+        cart[i] +
+        ' <button onclick="deleteFruit(' +
+        i +
+        ')">Delete</button><br>';
+    }
+    // Display the cart with the HTML buttons
+    document.getElementById("fruitList").innerHTML = text;
+  }
+  function deleteFruit(index) {
+    // Delete one item from the cart at the given index
+    cart.splice(index, 1);
+    // Display the updated cart
+    renderList();
+  }
+</script>

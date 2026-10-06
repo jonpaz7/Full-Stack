@@ -1,0 +1,50 @@
+<button onclick="addVegetable(0)">add Tomato</button>
+<button onclick="deleteVegetableByName(0)">delete Tomato</button>
+<button onclick="addVegetable(1)">add Cucumber</button>
+<button onclick="deleteVegetableByName(1)">delete Cucumber</button>
+<button onclick="addVegetable(2)">add Carrot</button>
+<button onclick="deleteVegetableByName(2)">delete Carrot</button>
+<button onclick="addVegetable(3)">add Pepper</button>
+<button onclick="deleteVegetableByName(3)">delete Pepper</button>
+<p id="vegetableList"></p>
+<script>
+  // ==================== Variables ====================
+  let vegetables = ["Tomato", "Cucumber", "Carrot", "Pepper"];
+  let cart = [];
+  renderList();
+  // ==================== Functions ====================
+  function renderList() {
+    let text = "";
+    for (let i = 0; i < cart.length; i++) {
+      text +=
+        i +
+        1 +
+        ": " +
+        cart[i] +
+        '<button onclick="deleteVegetable(' +
+        i +
+        ')"> delete</button> <br>';
+    }
+    document.getElementById("vegetableList").innerHTML = text;
+  }
+  function addVegetable(index) {
+    cart.push(vegetables[index]);
+    renderList();
+  }
+
+  function deleteVegetableByName(index) {
+    let vegToDel = vegetables[index];
+    let vegToDelCartIndex = cart.lastIndexOf(vegToDel);
+
+    if (vegToDelCartIndex < 0) {
+      return;
+    }
+    cart.splice(vegToDelCartIndex, 1);
+    renderList();
+  }
+
+  function deleteVegetable(index) {
+    cart.splice(index, 1);
+    renderList();
+  }
+</script>

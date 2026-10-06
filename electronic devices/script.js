@@ -52,7 +52,7 @@ const PRODUCTS = [
 
 let cartCounter = 0;
 let sum = 0;
-let productsList = "";
+let productsList = [];
 
 function addProduct(productID) {
   const p = PRODUCTS.find((x) => x.id === productID);
@@ -60,31 +60,28 @@ function addProduct(productID) {
   if (!p) return;
 
   //Updating cart counter
-  cartCounter += 1;
-  document.getElementById("cartCounter").textContent =
-    "Number of products in cart: " + cartCounter;
+  cartCounter++;
 
   //Updating cart sum
   sum += p.price;
-  document.getElementById("sum").textContent = `Sum: ${sum.toFixed(2)}$`;
-
-  //Updating reaction
-  if (sum > 3000) {
-    reaction = "Very  Expensive";
-  } else if (sum > 1000) {
-    reaction = "Expensive";
-  } else {
-    reaction = "Cheap";
-  }
-
-  document.getElementById("priceReaction").textContent = reaction;
 
   //Updating products list
-  productsList += `${p.name} <br>`;
-  document.getElementById("productsList").innerHTML = productsList;
+  productsList.push(p.name);
+  render();
+}
 
-  //Alert on product add
-  window.alert(`Product ${p.name} added to cart.`);
+function deleteProduct(productID) {
+  const p = PRODUCTS.find((x) => x.id === productID);
+
+  if (!p) return;
+
+  cartCounter = Math.max(cartCounter - 1, 0);
+
+  sum = Math.max(sum - p.price, 0);
+
+  productsList.splice(productsList.lastIndexOf(p.name), 1);
+
+  render();
 }
 
 function resetCartCounter() {
@@ -98,6 +95,38 @@ function resetCartCounter() {
   }
 }
 
+
+function resetProductsCart() {
+  document.getElementById("productsList").textContent = productsList = "";
+}
+
+function render() {
+  let text = "";
+
+  for (let i = 0; i < productsList.length; i++) {
+    text += `#  ${(i + 1)} ${productsList[i]}  <button class="delBTNS" onclick="deleteProduct(${i})">X</button> <br>`;
+  }
+
+  //Updating reaction
+  if (sum == 0) {
+  } else if (sum > 3000) {
+    reaction = "Very  Expensive";
+  } else if (sum > 1000) {
+    reaction = "Expensive";
+  } else {
+    reaction = "Cheap";
+  }
+
+  document.getElementById("productsList").innerHTML = text;
+
+  document.getElementById("cartCounter").textContent =
+    "Number of products in cart: " + cartCounter;
+
+  document.getElementById("sum").textContent = `Sum: ${sum.toFixed(2)}$`;
+
+  document.getElementById("priceReaction").textContent = reaction;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const footer = document.createElement("footer");
   footer.className = "ai-credit-footer";
@@ -109,7 +138,3 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   document.body.appendChild(footer);
 });
-
-function resetProductsCart() {
-  document.getElementById("productsList").textContent = productsList = "";
-}
