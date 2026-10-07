@@ -61,7 +61,7 @@ nav p {
 
 /* Main Container and Cards */
 .items-container {
-  width: 85%;
+  width: 100%;
   max-width: 1200px;
   margin: 30px auto;
   background-color: white;
@@ -354,13 +354,26 @@ button:active {
 }
 
 #divs-container {
-  width: 85%;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 25px;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
+
+  flex-direction: column;
+  background-color: white;
+  padding: 25px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
   gap: 25px;
+}
+
+.cart {
+  width: 18%;
+  float: right;
+  background-color: #d8d8d8;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  border-radius: 10px;
+  height: 100vh;
 }
