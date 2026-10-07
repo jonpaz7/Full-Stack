@@ -1,3 +1,7 @@
+let cartCounter = 0;
+let sum = 0.0;
+let cart = [];
+
 const PRODUCTS = [
   { id: 0, name: "Smartphone S26", price: 699.99 },
   { id: 1, name: "Tablet T15", price: 399.99 },
@@ -7,49 +11,73 @@ const PRODUCTS = [
   { id: 5, name: "Mouse and Keyboard", price: 199.99 },
 ];
 
-let cartCounter = 0;
-let sum = 0.0;
-let productsList = [];
-
 function addProduct(productID) {
   const p = PRODUCTS.find((x) => x.id === productID);
 
   if (!p) return;
 
-  //Updating cart counter
-  cartCounter++;
+  let found = false;
+  let foundIndex;
+  for (i = 0; i < cart.length; i++) {
+    if (cart[i].id == p.id) {
+      found = true;
+      foundIndex = i;
+    }
+  }
 
-  //Updating cart sum
+  if (!found) {
+    cart.push({ ...p, quantity: 1 });
+  } else {
+    cart[foundIndex].quantity++;
+  }
+
+  cartCounter++;
   sum += p.price;
 
-  //Updating products list
-  productsList.push(p.name);
   render();
 }
 
-function deleteProduct(productID) {
+function deleteProduct(productID, getrid) {
   const p = PRODUCTS.find((x) => x.id === productID);
 
   if (!p) return;
 
-  cartCounter = Math.max(cartCounter - 1, 0);
+  let found = false;
+  let foundIndex;
+  for (i = 0; i < cart.length; i++) {
+    if (cart[i].id == p.id) {
+      found = true;
+      foundIndex = i;
+    }
+  }
 
+  if (getrid) {
+    cartCounter -= cart[foundIndex].quantity;
+    sum -= cart[foundIndex].quantity * cart[foundIndex].price;
+    cart.splice(foundIndex, 1);
+    render();
+    return;
+  }
+
+  if (found) {
+    if (cart[foundIndex].quantity > 1) {
+      cart[foundIndex].quantity--;
+    } else if (cart[foundIndex].quantity == 1) {
+      cart.splice(foundIndex, 1);
+    }
+  }
+
+  cartCounter = Math.max(cartCounter - 1, 0);
   sum = Math.max(sum - p.price, 0);
 
-  let productToDelIndex = productsList.lastIndexOf(p.name);
-
-  if (productToDelIndex != -1) {
-    productsList.splice(productToDelIndex, 1);
-  }
   render();
 }
 
 function render() {
   let text = "";
 
-  for (let i = 0; i < productsList.length; i++) {
-    let itemORG = PRODUCTS.find((x) => x.name === productsList[i]);
-    text += `#  ${i + 1} ${productsList[i]} <strong>${itemORG.price}</strong> <button class="delBTNS" onclick="deleteProduct(${itemORG.id})">X</button> <br>`;
+  for (let i = 0; i < cart.length; i++) {
+    text += `#  ${i + 1} ${cart[i].name} <strong>${cart[i].price}</strong> <strong>Quantity: ${cart[i].quantity}</strong> <button class="delBTNS" onclick="deleteProduct(${cart[i].id} , true)">X</button> <br>`;
   }
 
   //Updating reaction
@@ -79,5 +107,10 @@ function resetCartCounter() {
     "Number of products in cart: " + cartCounter;
   document.getElementById("sum").textContent = "Sum: " + sum + "$";
   document.getElementById("priceReaction").textContent = "";
-  document.getElementById("productsList").textContent = productsList = [];
+
+  if (cart.length != 0) {
+    document.getElementById("productsList").textContent = cart = [];
+  } else {
+    window.alert("The cart is already empty");
+  }
 }
