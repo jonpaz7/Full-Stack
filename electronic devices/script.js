@@ -77,10 +77,21 @@ function render() {
   let text = "";
 
   for (let i = 0; i < cart.length; i++) {
-    text += `#  ${i + 1} ${cart[i].name} <strong>${cart[i].price}</strong> <strong>Quantity: ${cart[i].quantity}</strong> <button class="delBTNS" onclick="deleteProduct(${cart[i].id} , true)">X</button> <br>`;
+    text += `
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${cart[i].name}</div>
+          <div class="cart-item-details">
+            <span class="cart-price">🏷️ $${cart[i].price}</span>
+            <span class="cart-quantity">📦 Quantity: ${cart[i].quantity}</span>
+          </div>
+        </div>
+        <button class="delBTNS" onclick="deleteProduct(${cart[i].id} , true)"></button>
+      </div>
+    `;
   }
 
-  //Updating reaction
+  /*Updating reaction
   if (sum == 0) {
   } else if (sum > 3000) {
     reaction = "Very  Expensive";
@@ -88,7 +99,7 @@ function render() {
     reaction = "Expensive";
   } else {
     reaction = "Cheap";
-  }
+  }*/
 
   document.getElementById("productsList").innerHTML = text;
 

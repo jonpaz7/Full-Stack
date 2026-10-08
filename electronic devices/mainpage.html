@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Electronic Devices</title>
+    <title>ElectroStore – Premium Electronics</title>
     <script src="script.js" defer></script>
     <script src="secScript.js" defer></script>
     <link rel="stylesheet" href="main.css" />
@@ -12,110 +12,139 @@
   <body>
     <div id="navbar"></div>
 
-    <div class="title">
+    <!-- Hero Section -->
+    <section class="hero-section">
       <h1>My Electronic Devices</h1>
-    </div>
-    <div class="items-container">
-      <div class="devicecard">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
-        />
-        <div class="item-details">
-          <h3>Smartphone S26</h3>
-          <p>Price: $699.99</p>
+      <p class="hero-subtitle">Premium Electronics · Best Prices · Free Shipping</p>
+    </section>
 
-          <div class="countButtons">
-            <button onclick="deleteProduct(0)">-</button>
-            <a href="Smartphone S26.html"><button>more info</button></a>
-            <button onclick="addProduct(0)">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="devicecard">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkn4eHqrmlVZaw4rlEZkQi656rGb-eN93F4HjuwP7pg&s"
-        />
-        <div class="item-details">
-          <h3>Tablet T15</h3>
-          <p>Price: $399.99</p>
-          <div class="countButtons">
-            <button onclick="deleteProduct(1)">-</button>
-            <a href="Tablet T15.html"><button>more info</button></a>
-            <button onclick="addProduct(1)">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="devicecard">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v0Hww_FA6OZ0K2Lbk-dnXOpaSZg8hgl4bmfL5Eg8Bw&s=10"
-        />
-        <div class="item-details">
-          <h3>iPhone 14</h3>
-          <p>Price: $499.99</p>
-          <div class="countButtons">
-            <button onclick="deleteProduct(2)">-</button>
-            <a href="iPhone 14.html"><button>more info</button></a>
-            <button onclick="addProduct(2)">+</button>
-          </div>
-        </div>
-      </div>
+    <!-- Main Content (pushes right when cart opens) -->
+    <main class="main-content">
+      <div class="items-container">
 
-      <div class="devicecard">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff/lossless-page1-250px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-        />
-        <div class="item-details">
-          <h3>Toaster</h3>
-          <p>Price: $99.99</p>
-          <div class="countButtons">
-            <button onclick="deleteProduct(3)">-</button>
-            <a href="Toaster.html"><button>more info</button></a>
-            <button onclick="addProduct(3)">+</button>
+        <div class="devicecard">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
+            alt="Smartphone S26"
+          />
+          <div class="item-details">
+            <h3>Smartphone S26</h3>
+            <p>$699.99</p>
+            <div class="countButtons">
+              <button onclick="deleteProduct(0)">−</button>
+              <a href="Smartphone S26.html"><button>More Info</button></a>
+              <button onclick="addProduct(0)">+</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="devicecard">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RCA_630-TS_Television.jpg/250px-RCA_630-TS_Television.jpg?utm_source=he.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-        />
-        <div class="item-details">
-          <h3>TV</h3>
-          <p>Price: $1599.99</p>
-          <div class="countButtons">
-            <button onclick="deleteProduct(4)">-</button>
-            <a href="TV.html"><button>more info</button></a>
-            <button onclick="addProduct(4)">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="devicecard">
-        <img
-          src="https://d3m9l0v76dty0.cloudfront.net/system/photos/29287835/large/8de7ebc955a5a48eb8911e894b1f3709.jpg"
-        />
-        <div class="item-details">
-          <h3>Mouse and Keyboard</h3>
-          <p>Price: $199.99</p>
-          <div class="countButtons">
-            <button onclick="deleteProduct(5)">-</button>
-            <a href="Mouse and Keyboard.html"><button>more info</button></a>
-            <button onclick="addProduct(5)">+</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
+        <div class="devicecard">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCkn4eHqrmlVZaw4rlEZkQi656rGb-eN93F4HjuwP7pg&s"
+            alt="Tablet T15"
+          />
+          <div class="item-details">
+            <h3>Tablet T15</h3>
+            <p>$399.99</p>
+            <div class="countButtons">
+              <button onclick="deleteProduct(1)">−</button>
+              <a href="Tablet T15.html"><button>More Info</button></a>
+              <button onclick="addProduct(1)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="devicecard">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v0Hww_FA6OZ0K2Lbk-dnXOpaSZg8hgl4bmfL5Eg8Bw&s=10"
+            alt="iPhone 14"
+          />
+          <div class="item-details">
+            <h3>iPhone 14</h3>
+            <p>$499.99</p>
+            <div class="countButtons">
+              <button onclick="deleteProduct(2)">−</button>
+              <a href="iPhone 14.html"><button>More Info</button></a>
+              <button onclick="addProduct(2)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="devicecard">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff/lossless-page1-250px-Consumer_Reports_-_Hamilton_Beach_Digital_toaster.tiff.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Toaster"
+          />
+          <div class="item-details">
+            <h3>Toaster</h3>
+            <p>$99.99</p>
+            <div class="countButtons">
+              <button onclick="deleteProduct(3)">−</button>
+              <a href="Toaster.html"><button>More Info</button></a>
+              <button onclick="addProduct(3)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="devicecard">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RCA_630-TS_Television.jpg/250px-RCA_630-TS_Television.jpg?utm_source=he.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="TV"
+          />
+          <div class="item-details">
+            <h3>TV</h3>
+            <p>$1,599.99</p>
+            <div class="countButtons">
+              <button onclick="deleteProduct(4)">−</button>
+              <a href="TV.html"><button>More Info</button></a>
+              <button onclick="addProduct(4)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="devicecard">
+          <img
+            src="https://d3m9l0v76dty0.cloudfront.net/system/photos/29287835/large/8de7ebc955a5a48eb8911e894b1f3709.jpg"
+            alt="Mouse and Keyboard"
+          />
+          <div class="item-details">
+            <h3>Mouse and Keyboard</h3>
+            <p>$199.99</p>
+            <div class="countButtons">
+              <button onclick="deleteProduct(5)">−</button>
+              <a href="Mouse and Keyboard.html"><button>More Info</button></a>
+              <button onclick="addProduct(5)">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Cart Overlay (kept for JS compatibility – invisible & non-blocking) -->
+    <div class="cart-overlay" onclick="document.getElementById('divs-container').classList.remove('open'); this.classList.remove('active');"></div>
+
+    <!-- Cart Toggle Button -->
+    <button class="cart-toggle-btn" onclick="document.getElementById('divs-container').classList.toggle('open'); document.querySelector('.cart-overlay').classList.toggle('active');" aria-label="Open cart">
+      🛒
+    </button>
+
+    <!-- Cart Sidebar (slides from left – content stays interactive) -->
     <div id="divs-container">
-      <div
-        class="items-container"
-        style="width: fit-content; height: fit-content"
-      >
-        <h3>Products in Cart:</h3>
+      <div class="cart-header">
+        <h3>🛒 Shopping Cart</h3>
+        <button class="cart-close-btn" onclick="document.getElementById('divs-container').classList.remove('open'); document.querySelector('.cart-overlay').classList.remove('active');">✕</button>
+      </div>
+      <div class="cart-body">
         <p id="productsList"></p>
-        <p id="cartCounter">Number of products in cart: 0</p>
+      </div>
+      <div class="cart-footer">
         <p id="sum">Sum: 0$</p>
+        <p id="cartCounter">Number of products in cart: 0</p>
         <p id="priceReaction"></p>
-        <button onclick="resetCartCounter()">Reset</button>
+        <button onclick="resetCartCounter()">Clear Cart</button>
       </div>
     </div>
+
   </body>
 </html>

@@ -11,43 +11,46 @@
 
   <body>
     <div id="navbar"></div>
-    <div id="item-page" class="devicepage">
-      <h2>Smartphone S26</h2>
 
-      <div class="gallery-container">
-        <img
-          id="mainImage"
-          class="bigImage"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
-        />
-
-        <div class="thumbnails-container">
+    <main class="product-page-layout">
+      <div class="devicepage">
+        <div class="gallery-container">
           <img
-            class="smallImage"
+            id="mainImage"
+            class="bigImage"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
-            onclick="showPicture1()"
+            alt="Smartphone S26"
           />
-          <img
-            class="smallImage"
-            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
-            onclick="showPicture2()"
-          />
-          <img
-            class="smallImage"
-            src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
-            onclick="showPicture3()"
-          />
+          <div class="thumbnails-container">
+            <img
+              class="smallImage"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
+              onclick="showPicture1()"
+              alt="Smartphone S26 view 1"
+            />
+            <img
+              class="smallImage"
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+              onclick="showPicture2()"
+              alt="Smartphone S26 view 2"
+            />
+            <img
+              class="smallImage"
+              src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+              onclick="showPicture3()"
+              alt="Smartphone S26 view 3"
+            />
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h2>Smartphone S26</h2>
+          <p class="product-price">$699.99</p>
+          <p class="product-description">High-performance smartphone with advanced camera system, 6.7-inch AMOLED display, fast charging, and all-day battery life.</p>
+          <button class="btn-add-to-cart" onclick="addtocart()">Add to Cart</button>
+          <p id="message"></p>
         </div>
       </div>
-
-      <p><strong>Price:</strong> $699.99</p>
-      <p>
-        <strong>Description:</strong> High-performance smartphone with advanced
-        camera system, 6.7-inch AMOLED display, fast charging, and all-day
-        battery life.
-      </p>
-      <button onclick="addtocart()">Add to cart</button>
-      <p id="message"></p>
-    </div>
+    </main>
   </body>
 </html>
