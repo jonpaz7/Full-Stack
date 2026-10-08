@@ -15,13 +15,14 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <h1>My Electronic Devices</h1>
-      <p class="hero-subtitle">Premium Electronics · Best Prices · Free Shipping</p>
+      <p class="hero-subtitle">
+        Premium Electronics · Best Prices · Free Shipping
+      </p>
     </section>
 
     <!-- Main Content (pushes right when cart opens) -->
     <main class="main-content">
       <div class="items-container">
-
         <div class="devicecard">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsNcZwcWv1-RDlHUNOjL3LocARyGw0sY2d0-jqlWlGKg&s=10"
@@ -117,15 +118,27 @@
             </div>
           </div>
         </div>
-
       </div>
     </main>
 
     <!-- Cart Overlay (kept for JS compatibility – invisible & non-blocking) -->
-    <div class="cart-overlay" onclick="document.getElementById('divs-container').classList.remove('open'); this.classList.remove('active');"></div>
+    <div
+      class="cart-overlay"
+      onclick="
+        document.getElementById('divs-container').classList.remove('open');
+        this.classList.remove('active');
+      "
+    ></div>
 
     <!-- Cart Toggle Button -->
-    <button class="cart-toggle-btn" onclick="document.getElementById('divs-container').classList.toggle('open'); document.querySelector('.cart-overlay').classList.toggle('active');" aria-label="Open cart">
+    <button
+      class="cart-toggle-btn"
+      onclick="
+        document.getElementById('divs-container').classList.toggle('open');
+        document.querySelector('.cart-overlay').classList.toggle('active');
+      "
+      aria-label="Open cart"
+    >
       🛒
     </button>
 
@@ -133,18 +146,25 @@
     <div id="divs-container">
       <div class="cart-header">
         <h3>🛒 Shopping Cart</h3>
-        <button class="cart-close-btn" onclick="document.getElementById('divs-container').classList.remove('open'); document.querySelector('.cart-overlay').classList.remove('active');">✕</button>
+        <button
+          class="cart-close-btn"
+          onclick="
+            document.getElementById('divs-container').classList.remove('open');
+            document.querySelector('.cart-overlay').classList.remove('active');
+          "
+        >
+          ✕
+        </button>
       </div>
       <div class="cart-body">
         <p id="productsList"></p>
       </div>
       <div class="cart-footer">
-        <p id="sum">Sum: 0$</p>
+        <p id="sum">Total: 0.00$</p>
         <p id="cartCounter">Number of products in cart: 0</p>
         <p id="priceReaction"></p>
         <button onclick="resetCartCounter()">Clear Cart</button>
       </div>
     </div>
-
   </body>
 </html>
